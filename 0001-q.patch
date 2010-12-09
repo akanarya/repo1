@@ -1,0 +1,74 @@
+From 34dc00c1eb818d76f728655b97e3e62647740db4 Mon Sep 17 00:00:00 2001
+From: Ali Kanarya <akanarya@gmail.com>
+Date: Thu, 9 Dec 2010 23:18:17 +0200
+Subject: [PATCH 1/2] q
+
+---
+ 0001-Squashed-commit-of-the-following.patch |   55 +++++++++++++++++++++++++++
+ 1 files changed, 55 insertions(+), 0 deletions(-)
+ create mode 100644 0001-Squashed-commit-of-the-following.patch
+
+diff --git a/0001-Squashed-commit-of-the-following.patch b/0001-Squashed-commit-of-the-following.patch
+new file mode 100644
+index 0000000..cba356e
+--- /dev/null
++++ b/0001-Squashed-commit-of-the-following.patch
+@@ -0,0 +1,55 @@
++From 76029bd157b41c43ef631630f77b22bd89a8a6a0 Mon Sep 17 00:00:00 2001
++From: Ali Kanarya <akanarya@gmail.com>
++Date: Tue, 7 Dec 2010 00:09:59 +0200
++Subject: [PATCH] Squashed commit of the following:
++
++commit 6c42a1d1ee143a44b5c7e235703f7620ad08eee6
++Author: Ali Kanarya <akanarya@gmail.com>
++Date:   Tue Dec 7 00:06:02 2010 +0200
++
++    b1 .3
++
++commit 01400a154c89147d4a9d11d354a419f0a2650cc2
++Author: Ali Kanarya <akanarya@gmail.com>
++Date:   Tue Dec 7 00:03:22 2010 +0200
++
++    c b1 .2
++---
++ Author/author.lic      |    2 --
++ Author/lics/author.lic |    2 ++
++ Author/main.cpp        |    2 +-
++ 3 files changed, 3 insertions(+), 3 deletions(-)
++ delete mode 100644 Author/author.lic
++ create mode 100644 Author/lics/author.lic
++
++diff --git a/Author/author.lic b/Author/author.lic
++deleted file mode 100644
++index 446db34..0000000
++--- a/Author/author.lic
+++++ /dev/null
++@@ -1,2 +0,0 @@
++-136D1D
++-//KNB
++diff --git a/Author/lics/author.lic b/Author/lics/author.lic
++new file mode 100644
++index 0000000..446db34
++--- /dev/null
+++++ b/Author/lics/author.lic
++@@ -0,0 +1,2 @@
+++136D1D
+++//KNB
++diff --git a/Author/main.cpp b/Author/main.cpp
++index 9ae175b..02f1e1c 100644
++--- a/Author/main.cpp
+++++ b/Author/main.cpp
++@@ -1,6 +1,6 @@
++ #include <QtGui/QApplication>
++ #include "mainwindow.h"
++-
+++b1 .2
++ int main(int argc, char *argv[])
++ {
++     QApplication a(argc, argv);
++-- 
++1.7.3.1.msysgit.0
++
+-- 
+1.7.3.1.msysgit.0
+
