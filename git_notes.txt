@@ -1,0 +1,204 @@
+SSH Keys
+--------
+    necessaary for communication between remote hub
+
+$ ssh-keygen -C "akanarya@gmail.com" -t rsa
+
+name files as "id_rsa" and "id_rsa.pub"
+copy them 'c:\documents and settings\user\.ssh' folder if not automatically coppied
+do not forget passphrase
+
+* to communicate with tortoisegit;
+
+tortoisegit->puttygen->conversions->import "id_rsa", then enter "key passphrase" and
+"save private key"; results "<filename>.ppk"
+
+and then tortoisegit->pageant->add key "<filename>.ppk"
+
+paste "id_rsa.pub" content into github.com account 
+(do not add title to key, it gets from key, and same title for multiple keys is not problem)
+
+
+Config
+------
+
+"tor.git > settings > git > config" fill user info
+
+
+Config for Remote
+-----------------
+
+"tor.git > settings > git > remote" 
+
+remote: <name>
+url: remote repo url
+putty key: "<filename>.ppk" created above
+
+for first connection it will ask for passphrase,
+better run "tor.git->pageant" and load ppk key before connect
+
+
+Repository
+----------
+
+Create project folder with files
+"Git init here" 
+
+{ $ git init }
+
+
+Bare Repository
+---------------
+For central server, no working dir., everything is hold in .git folder
+After initiated with no files in it, repos on develeper machines are pushed.
+
+{ $ git init --bare}
+
+
+Ignore files & folders
+----------------------
+
+select file, rclick "tor.git > Add to ignore list" (creates .gitignore file)
+
+{ $ touch .gitignore ; then edit this file with notepad }
+
+
+Add files and Staging Area
+--------------------------
+
+for all files;
+"Git add all files now"  { $ git add . }
+
+for selected files;
+rclick on blank area then "tor.git > add"
+
+files are added to STAGING AREA
+
+staged changes can be undo by;
+
+"Git Gui > Commit > Unstage from commit" by selecting files
+
+{ $ git rm -cached <file> }
+
+
+Commit
+------
+
+"Git commit > ..." , or
+"Git Commit Tool", commit with a 'message' 
+
+to STAGE changed files use "stage changed" button
+
+{ $ git commit -m <message> }
+
+
+Reset
+-----
+
+reset uncommited changes in same HEAD;
+"Git Gui > branch > reset" 
+
+reset to other previous HEAD;
+"Git History", select change and rclick "reset <bname> to here"
+
+
+{ $ git reset --hard HEAD^ ; reset to one prior HEAD 
+  $ git reset --hard ; reset worked uncommited changes in same HEAD }
+
+
+Status & Log
+------------
+
+"Git History" 
+"tor.git > check for modifications"
+"tor.git > show log"
+
+{ $ git log
+  $ git log > ChangeLog ; creates a changelog file  
+  $ git status }
+
+
+Push to Remote
+--------------
+
+"tor.git > push"
+local "master", remote "origin" (one branch -only master- supposed)
+
+{ $ git push origin master }
+
+
+New Branch (usefull for active dev. upon stable branch)
+----------
+
+"tor.git > create branch"
+then select it to work; "Git Branch"
+
+{ $git branch <branch name>; to create
+  $git checkout <branch name>; to switch for working
+  ==
+  $git checkout -b <branch name>; create and switch 
+
+  $git branch; list branches and show active branch with * }
+
+
+Merge Branch
+------------
+
+change current branch to "be merged to" branch (eg master), then 
+
+"Git Gui > merge" ; merge and commit, or
+"tor.git > merge with squash" then "Git commit > ..."
+
+{ $ git pull --squash . <bname> ; then commit }
+
+
+Delete Branch
+-------------
+
+"Git Gui > Branch > Delete"
+
+{ $ git branch -D <bname> }
+
+
+Revert
+------
+
+Undo commit; revert is another commit and reverted commit is not deleted from log
+
+"tor.git > show log", select commit, rclick "revert changes by this commit", then commit
+
+{ $ git revert <commit hash> }
+
+
+Checkout file (not whole branch)
+--------------------------------
+
+{ $ git checkout <commit hash> <filename> }
+
+
+Create Patch File
+-----------------
+
+"tor.git > create path serial" , or
+"tor.git > show log > format patch" ; to make a patch that includes diffs between versions
+
+
+Clone
+-----
+
+Copy the entire repo
+
+"Git Clone"
+
+{ $ git clone <url or local dir> <local dir> }
+
+
+Upgrading local repo from remote
+--------------------------------
+
+"tor.git > pull"
+
+{ $ git pull }
+
+
+
