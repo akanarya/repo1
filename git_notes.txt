@@ -176,6 +176,15 @@ Checkout file (not whole branch)
 { $ git checkout <commit hash> <filename> }
 
 
+Cherry-Pick
+-----------
+
+To take good commits of a temp. branch to a say permanent branch.
+
+"Git History", rclick "cherry pick this commit" , or
+"tor.git > show log", rclick "cherry pick this commit" 
+
+
 Create Patch File
 -----------------
 
@@ -201,4 +210,13 @@ Upgrading local repo from remote
 { $ git pull }
 
 
+Stash
+-----
+
+Previous state (last commited state) is saved to stash, and working directory seems as if it wasnt edited.
+May be usefull for un-sure editions. System uses branching behind.
+
+"tor.git > stash save" - "tor.git > stash pop"
+
+{ $ git stash - $ git stash apply }
 
