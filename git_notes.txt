@@ -220,3 +220,29 @@ May be usefull for un-sure editions. System uses branching behind.
 
 { $ git stash - $ git stash apply }
 
+
+Correct Last Commit
+-------------------
+
+If message of the last commit is to be changed or a bit more change will be included
+in last commit then;
+
+"Git Commit Tool > Commit > Ammend Last Commit"
+
+{ $ git commit --amend , $ gir commit --ammend -a }
+
+
+Tidy Up Commits Later
+--------------------
+
+"tor.git > rebase"
+
+
+Remove Permanently (from History)
+---------------------------------
+
+eg. for a file;
+
+$ git filter-branch --tree-filter 'rm top/secret/file' HEAD
+
+
