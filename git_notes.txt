@@ -103,7 +103,9 @@ reset to other previous HEAD;
 
 
 { $ git reset --hard HEAD^ ; reset to one prior HEAD 
-  $ git reset --hard ; reset worked uncommited changes in same HEAD }
+  $ git reset --hard ; reset worked uncommited changes in same HEAD 
+  $ git reset ORIG_HEAD ; ORIG_HEAD is a saved tag by git, when HEAD is changed to past
+}
 
 
 Status & Log
