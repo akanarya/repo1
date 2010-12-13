@@ -246,3 +246,22 @@ eg. for a file;
 $ git filter-branch --tree-filter 'rm top/secret/file' HEAD
 
 
+Find and Correct A Bug
+----------------------
+
+Assume build of commit 1b6d is good but last is bad, therefore there ise bug in between, then
+
+$ git bisect start	
+$ git bisect HEAD	// mark HEAD as bad 
+$ git bisect good 1b6d	// mark 1b6d as good
+
+then move from good to bad with
+$ git bisect good , or 
+$ git bisect bad
+
+and build these steps to find bad commit
+
+once investigation finished
+
+$ git bisect reset
+
