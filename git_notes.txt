@@ -265,3 +265,19 @@ once investigation finished
 
 $ git bisect reset
 
+
+Mark The Developer for Buggies/Wrong Commits
+--------------------------------------------
+
+"tor.git > show log", rclick file and "blame"
+
+{ $ git blame <filename> }
+
+
+
+
+
+
+
+
+
